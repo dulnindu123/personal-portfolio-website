@@ -1,0 +1,49 @@
+/* Define the theme colors */
+:root {
+  --bg-primary: #050A18;
+  --bg-secondary: #0A1128;
+  --bg-gradient-start: #040816;
+  --bg-gradient-middle: #0A1B3D;
+  --bg-gradient-end: #0E2A5C;
+
+  --text-primary: #EAF4FF;
+  --text-secondary: #A9C6FF;
+  --text-muted: #6F8DBA;
+
+  --accent-primary: #00C8FF;
+  --accent-secondary: #3B82F6;
+  --accent-soft: #60A5FA;
+
+  --glow-strong: 0 0 25px #00C8FF;
+  --glow-soft: 0 0 15px #3B82F6;
+
+  --border-glow: #1E3A8A;
+  --border-soft: #1B2B52;
+}
+
+/* Apply text shadow and glow effect */
+.glow-effect {
+    text-shadow: var(--glow-strong);
+    transition: 0.3s ease-in-out;
+}
+
+.glow-effect:hover {
+    text-shadow: var(--glow-soft);
+    transform: scale(1.05);
+}
+
+/* Hover effect for cards */
+.card-hover:hover {
+    box-shadow: 0 0 15px var(--glow-soft);
+    transform: translateY(-5px);
+}
+
+/* Profile Image Fix */
+.profile-image {
+    object-position: center top;
+}
+
+/* Other specific styles, for example, skill tag colors */
+.skill-tag {
+    background: linear-gradient(45deg, #4f46e5, #7c3aed);
+}

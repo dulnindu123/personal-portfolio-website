@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W.K. Dulnindu Saranga - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="Myportfolio.css">
+    <link rel="stylesheet" href="styles/theme.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .skill-tag { background: linear-gradient(45deg, #4f46e5, #7c3aed); }
+        .profile-image { object-position: center top; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header Navigation -->
+    <header class="bg-var(--bg-primary) shadow-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold text-gray-800">
+                    W.K. Dulnindu Saranga
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-var(--text-primary) hover:text-var(--accent-primary) transition duration-300">About</a>
+                    <a href="#projects" class="text-var(--text-primary) hover:text-var(--accent-primary) transition duration-300">Project Table</a>
+                    <a href="#certifications" class="text-var(--text-primary) hover:text-var(--accent-primary) transition duration-300">Certifications</a>
+                    <a href="#cv" class="text-var(--text-primary) hover:text-var(--accent-primary) transition duration-300">CV</a>
+                    <a href="#team" class="text-var(--text-primary) hover:text-var(--accent-primary) transition duration-300">My Team</a>
+                    <a href="#sitemap" class="text-var(--text-primary) hover:text-var(--accent-primary) transition duration-300">Site Map</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-blue-600" title="Toggle navigation menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#about" class="block py-2 text-gray-600 hover:text-blue-600">About</a>
+                <a href="#projects" class="block py-2 text-gray-600 hover:text-blue-600">Project Table</a>
+                <a href="#certifications" class="block py-2 text-gray-600 hover:text-blue-600">Certifications</a>
+                <a href="#cv" class="block py-2 text-gray-600 hover:text-blue-600">CV</a>
+                <a href="#team" class="block py-2 text-gray-600 hover:text-blue-600">My Team</a>
+                <a href="#sitemap" class="block py-2 text-gray-600 hover:text-blue-600">Site Map</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative text-white py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-var(--bg-gradient-start) to-var(--bg-gradient-end)">
+            <div class="container mx-auto px-6 text-center">
+                <div class="flex justify-center mb-8">
+                    <div class="w-48 h-48 relative">
+                        <img
+                            src="images/profile.png" 
+                            alt="W.K. Dulnindu Saranga"
+                            class="w-48 h-48 object-cover rounded-full border-4 border-white shadow-2xl profile-image"
+                        >
+                    </div>
+                </div>
+                <h1 class="text-5xl font-bold mb-4 text-var(--text-primary)">W.K. Dulnindu Saranga</h1>
+                <p class="text-xl mb-2 text-var(--text-secondary)">BSc (Hons) Computer Science Undergraduate</p>
+                <p class="text-lg opacity-90 mb-8 text-var(--text-muted)">Aspiring Software Developer | Seeking Internship Opportunities</p>
+                <a href="#about" class="bg-white text-var(--accent-primary) px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 glow-effect">
+                    Learn More About Me
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-var(--bg-secondary)">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">About Myself</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-2xl p-8 mb-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Education & Background</h3>
+                    <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                        I am currently pursuing a <strong>BSc Honours in Computer Science</strong>, with a passion for creating innovative solutions through technology. My academic journey has equipped me with a strong foundation in programming, software development, and emerging technologies.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-blue-50 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-blue-800">🎮 Interests</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Game Development</li>
+                            <li>• Cybersecurity</li>
+                            <li>• 3D Modeling & Animation</li>
+                            <li>• Web Development</li>
+                        </ul>
+                    </div>
+                    <div class="bg-purple-50 rounded-2xl p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-purple-800">📚 Certifications in Progress</h3>
+                        <ul class="space-y-2 text-gray-700">
+                            <li>• Certified Ethical Hacker (CEH)</li>
+                            <li>• CompTIA Security+</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-6 text-gray-800">🛠️ Technical Skills</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">Java</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">C#</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">Unity</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">Unreal Engine</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">Blender</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">GitHub</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">CI/CD</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">HTML/CSS</span>
+                        <span class="skill-tag text-white px-4 py-2 rounded-full text-sm font-medium">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-var(--bg-secondary)">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Project Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Python Projects -->
+                <div class="bg-white rounded-2xl p-6 card-hover cursor-pointer" onclick="showProjects('python')">
+                    <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.26-.02.21-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25c-.2 0-.37.09-.5.27-.14.18-.21.42-.21.72 0 .3.07.54.21.72.13.18.3.27.5.27.2 0 .37-.09.5-.27.14-.18.21-.42.21-.72 0-.3-.07-.54-.21-.72-.13-.18-.3-.27-.5-.27zm5.76 0c-.2 0-.37.09-.5.27-.14.18-.21.42-.21.72 0 .3.07.54.21.72.13.18.3.27.5.27.2 0 .37-.09.5-.27.14-.18.21-.42.21-.72 0-.3-.07-.54-.21-.72-.13-.18-.3-.27-.5-.27z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Python Projects</h3>
+                    <p class="text-gray-600 mb-4">Data analysis, automation scripts, and backend applications</p>
+                    <button class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300">
+                        View Projects
+                    </button>
+                </div>
+
+                <!-- Web Development Projects -->
+                <div class="bg-white rounded-2xl p-6 card-hover cursor-pointer" onclick="showProjects('web')">
+                    <div class="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.739 9 11 5.16-1.261 9-5.45 9-11V7l-10-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Web Development</h3>
+                    <p class="text-gray-600 mb-4">Responsive websites and web applications</p>
+                    <button class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition duration-300">
+                        View Projects
+                    </button>
+                </div>
+
+                <!-- Java Projects -->
+                <div class="bg-white rounded-2xl p-6 card-hover cursor-pointer" onclick="showProjects('java')">
+                    <div class="w-16 h-16 bg-orange-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8.851 18.56s-.917.534.653.714c1.902.218 2.874.187 4.969-.211 0 0 .552.346 1.321.646-4.699 2.013-10.633-.118-6.943-1.149M8.276 15.933s-1.028.761.542.924c2.032.209 3.636.227 6.413-.308 0 0 .384.389.987.602-5.679 1.661-12.007.13-7.942-1.218M13.116 11.475c1.158 1.333-.304 2.533-.304 2.533s2.939-1.518 1.589-3.418c-1.261-1.772-2.228-2.652 3.007-5.688 0-.001-8.216 2.051-4.292 6.573M19.33 20.504s.679.559-.747.991c-2.712.822-11.288 1.069-13.669.033-.856-.373.75-.89 1.254-.998.527-.114.828-.093.828-.093-.953-.671-6.156 1.317-2.643 1.887 9.58 1.553 17.462-.7 14.977-1.82M9.292 13.21s-4.362 1.036-1.544 1.412c1.189.159 3.561.123 5.77-.062 1.806-.152 3.618-.477 3.618-.477s-.637.272-1.098.587c-4.429 1.165-12.986.623-10.522-.568 2.082-1.006 3.776-.892 3.776-.892M17.116 17.584c4.503-2.34 2.421-4.589.968-4.285-.355.074-.515.138-.515.138s.132-.207.385-.297c2.875-1.011 5.086 2.981-.928 4.562 0-.001.07-.062.09-.118M14.401 0s2.494 2.494-2.365 6.33c-3.896 3.077-.888 4.832-.001 6.836-2.274-2.053-3.943-3.858-2.824-5.539 1.644-2.469 6.197-3.665 5.19-7.627M9.734 23.924c4.322.277 10.959-.153 11.116-2.198 0 0-.302.775-3.572 1.391-3.688.694-8.239.613-10.937.168 0-.001.553.457 3.393.639"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Java Projects</h3>
+                    <p class="text-gray-600 mb-4">Desktop applications and enterprise solutions</p>
+                    <button class="bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition duration-300">
+                        View Projects
+                    </button>
+                </div>
+
+                <!-- Blender Projects -->
+                <div class="bg-white rounded-2xl p-6 card-hover cursor-pointer" onclick="showProjects('blender')">
+                    <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12.51 13.214c.046-.8.438-1.506 1.03-2.006a3.424 3.424 0 0 1 2.212-.79c.85 0 1.631.3 2.211.79.592.5.984 1.206 1.03 2.006.045.823-.285 1.586-.865 2.153a3.389 3.389 0 0 1-2.376.973 3.389 3.389 0 0 1-2.376-.973c-.58-.567-.91-1.33-.865-2.153M7.35 14.831c.006.314.106.922.256 1.398a7.372 7.372 0 0 0 1.593 2.757 8.227 8.227 0 0 0 2.787 2.001 8.746 8.746 0 0 0 3.66.76 8.746 8.746 0 0 0 3.66-.76 8.227 8.227 0 0 0 2.787-2.001 7.372 7.372 0 0 0 1.593-2.757c.15-.476.25-1.084.256-1.398L12 9.179z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Blender Projects</h3>
+                    <p class="text-gray-600 mb-4">3D modeling, animation, and visual effects</p>
+                    <button class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition duration-300">
+                        View Projects
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-20 bg-var(--bg-secondary)">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Certifications</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-red-800">🔒 Certified Ethical Hacker (CEH)</h3>
+                        <p class="text-gray-600 mb-2"><strong>Status:</strong> In Progress</p>
+                        <p class="text-gray-600">Comprehensive cybersecurity certification focusing on ethical hacking methodologies and penetration testing.</p>
+                    </div>
+                    <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-2 text-blue-800">🛡️ CompTIA Security+</h3>
+                        <p class="text-gray-600 mb-2"><strong>Status:</strong> In Progress</p>
+                        <p class="text-gray-600">Industry-standard certification covering network security, compliance, and operational security fundamentals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="py-20 bg-var(--bg-secondary)">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-8 text-gray-800">Curriculum Vitae</h2>
+            <p class="text-xl text-gray-600 mb-8">Download my complete CV to learn more about my experience and qualifications.</p>
+            <button class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition duration-300 font-semibold">
+                📄 Download CV (PDF)
+            </button>
+        </div>
+    </section>
+
+    <!-- My Team Section -->
+    <section id="team" class="py-20 bg-var(--bg-secondary)">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">My Team</h2>
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-xl text-gray-600 mb-8">
+                    I believe in collaborative development and have worked with talented individuals across various projects. 
+                    Here you can learn about my collaborators and team members.
+                </p>
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">🤝 Collaboration Philosophy</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        I value teamwork, open communication, and shared learning. Whether working on academic projects, 
+                        open-source contributions, or professional development, I strive to create an inclusive and 
+                        productive environment for all team members.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Site Map Section -->
+    <section id="sitemap" class="py-20 bg-var(--bg-secondary)">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">Site Map</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">📋 Main Sections</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• <a href="#about" class="hover:text-blue-600">About Myself</a></li>
+                            <li>• <a href="#projects" class="hover:text-blue-600">Project Portfolio</a></li>
+                            <li>• <a href="#certifications" class="hover:text-blue-600">Certifications</a></li>
+                            <li>• <a href="#cv" class="hover:text-blue-600">Curriculum Vitae</a></li>
+                            <li>• <a href="#team" class="hover:text-blue-600">My Team</a></li>
+                        </ul>
+                    </div>
+                    <div class="bg-white rounded-lg p-6">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">🚀 Project Categories</h3>
+                        <ul class="space-y-2 text-gray-600">
+                            <li>• Python Development</li>
+                            <li>• Web Development</li>
+                            <li>• Java Applications</li>
+                            <li>• Blender 3D Projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">W.K. Dulnindu Saranga</h3>
+                    <p class="text-gray-400">Computer Science Student & Developer passionate about creating innovative solutions.</p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Connect With Me</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="Follow on Twitter" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-full transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="Follow on LinkedIn" class="bg-blue-800 hover:bg-blue-900 p-3 rounded-full transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" title="Follow on Instagram" class="bg-pink-600 hover:bg-pink-700 p-3 rounded-full transition duration-300">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Get In Touch</h3>
+                    <div class="space-y-2">
+                        <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition duration-300 w-full">
+                            📧 Contact Me
+                        </button>
+                        <button class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition duration-300 w-full">
+                            💬 Send Feedback
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400">© 2024 W.K. Dulnindu Saranga. All rights reserved.</p>
+                <p class="text-gray-500 mt-2">Student 2 page editor</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-2xl p-8 max-w-2xl mx-4 max-h-96 overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 id="modal-title" class="text-2xl font-bold text-gray-800"></h3>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700" title="Close modal">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+            <div id="modal-content" class="text-gray-600">
+                <!-- Project content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Project modal functionality
+        function showProjects(category) {
+            const modal = document.getElementById('project-modal');
+            const title = document.getElementById('modal-title');
+            const content = document.getElementById('modal-content');
+            
+            const projectData = {
+                python: {
+                    title: 'Python Projects',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-lg">Data Analysis Dashboard</h4>
+                                <p>Interactive dashboard for analyzing large datasets with pandas and matplotlib.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-lg">Automation Scripts</h4>
+                                <p>Collection of scripts for automating repetitive tasks and system administration.</p>
+                            </div>
+                            <div class="border-l-4 border-blue-500 pl-4">
+                                <h4 class="font-semibold text-lg">Machine Learning Models</h4>
+                                <p>Implementation of various ML algorithms for classification and prediction tasks.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                web: {
+                    title: 'Web Development Projects',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold text-lg">Responsive Portfolio Sites</h4>
+                                <p>Modern, mobile-first websites built with HTML5, CSS3, and JavaScript.</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold text-lg">E-commerce Platform</h4>
+                                <p>Full-stack web application with shopping cart and payment integration.</p>
+                            </div>
+                            <div class="border-l-4 border-green-500 pl-4">
+                                <h4 class="font-semibold text-lg">Task Management App</h4>
+                                <p>Collaborative project management tool with real-time updates.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                java: {
+                    title: 'Java Projects',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-semibold text-lg">Desktop Application Suite</h4>
+                                <p>Cross-platform desktop applications built with JavaFX and Swing.</p>
+                            </div>
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-semibold text-lg">Enterprise Management System</h4>
+                                <p>Large-scale business application with database integration and reporting.</p>
+                            </div>
+                            <div class="border-l-4 border-orange-500 pl-4">
+                                <h4 class="font-semibold text-lg">Mobile Game Development</h4>
+                                <p>Android games developed using Java and game development frameworks.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                blender: {
+                    title: 'Blender Projects',
+                    content: `
+                        <div class="space-y-4">
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-lg">3D Character Modeling</h4>
+                                <p>Detailed character models for games and animations with rigging and texturing.</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-lg">Architectural Visualization</h4>
+                                <p>Photorealistic renders of buildings and interior spaces for clients.</p>
+                            </div>
+                            <div class="border-l-4 border-purple-500 pl-4">
+                                <h4 class="font-semibold text-lg">Motion Graphics</h4>
+                                <p>Animated logos, title sequences, and visual effects for video projects.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            title.textContent = projectData[category].title;
+            content.innerHTML = projectData[category].content;
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // Contact and feedback button functionality
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Contact Me')) {
+                button.addEventListener('click', function() {
+                    alert('Contact form would open here. You can integrate with your preferred contact method!');
+                });
+            }
+            if (button.textContent.includes('Send Feedback')) {
+                button.addEventListener('click', function() {
+                    alert('Feedback form would open here. Great for collecting user input!');
+                });
+            }
+            if (button.textContent.includes('Download CV')) {
+                button.addEventListener('click', function() {
+                    alert('CV download would start here. Upload your CV file and link it!');
+                });
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98301c1c551cff92',t:'MTc1ODUyNjM2MS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
