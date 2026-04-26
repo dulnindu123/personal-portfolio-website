@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap | Dulnindu Saranga</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root[data-theme="light"] {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --accent: #3b82f6;
+            --border: #e2e8f0;
+            --card: #ffffff;
+        }
+
+        :root[data-theme="dark"] {
+            --bg-primary: #0f172a;
+            --bg-secondary: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+            --border: #334155;
+            --card: #1e293b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .container { max-width: 1000px; }
+        .border-custom { border-color: var(--border); }
+        .text-accent { color: var(--accent); }
+        .text-secondary { color: var(--text-secondary); }
+    </style>
+</head>
+<body class="min-h-screen py-20 px-6">
+    <div class="container mx-auto">
+        <header class="mb-16 border-b border-custom pb-8 text-center md:text-left">
+            <a href="Myportfolio.html" class="text-accent hover:underline mb-4 inline-block font-medium">&larr; Back to Portfolio</a>
+            <h1 class="text-4xl md:text-5xl font-black tracking-tighter mt-2">SITEMAP</h1>
+            <p class="text-secondary mt-2">A comprehensive directory of all content on my professional portfolio.</p>
+        </header>
+
+        <main class="grid md:grid-cols-3 gap-12">
+            <!-- Section 1: Main Navigation -->
+            <section class="bg-secondary/50 p-6 rounded-2xl border border-custom">
+                <h2 class="text-xl font-bold mb-6 flex items-center gap-2 text-accent">
+                    Main Sections
+                </h2>
+                <ul class="space-y-4 font-medium">
+                    <li><a href="Myportfolio.html#" class="hover:text-accent transition-colors">Home / Introduction</a></li>
+                    <li><a href="Myportfolio.html#about" class="hover:text-accent transition-colors">About My Journey</a></li>
+                    <li><a href="Myportfolio.html#skills" class="hover:text-accent transition-colors">Technical Expertise</a></li>
+                    <li><a href="Myportfolio.html#projects" class="hover:text-accent transition-colors">Project Portfolio</a></li>
+                    <li><a href="Myportfolio.html#education" class="hover:text-accent transition-colors">Education & Certifications</a></li>
+                    <li><a href="Myportfolio.html#contact" class="hover:text-accent transition-colors">Get In Touch</a></li>
+                </ul>
+            </section>
+
+            <!-- Section 2: Projects Deep Dive -->
+            <section class="bg-secondary/50 p-6 rounded-2xl border border-custom">
+                <h2 class="text-xl font-bold mb-6 flex items-center gap-2 text-accent">
+                    Featured Projects
+                </h2>
+                <ul class="space-y-6">
+                    <li>
+                        <a href="Myportfolio.html#projects" class="font-semibold hover:text-accent block">BodySync AI</a>
+                        <p class="text-xs text-secondary mt-1 uppercase tracking-widest">Health & Fitness Tracker</p>
+                    </li>
+                    <li>
+                        <a href="Myportfolio.html#projects" class="font-semibold hover:text-accent block">Smart Campus REST API</a>
+                        <p class="text-xs text-secondary mt-1 uppercase tracking-widest">Backend Management System</p>
+                    </li>
+                    <li>
+                        <a href="Myportfolio.html#projects" class="font-semibold hover:text-accent block">HelaDry IoT Dehydrator</a>
+                        <p class="text-xs text-secondary mt-1 uppercase tracking-widest">Agricultural IoT Solution</p>
+                    </li>
+                    <li>
+                        <a href="Myportfolio.html#projects" class="font-semibold hover:text-accent block">Life on Land (SDG 15)</a>
+                        <p class="text-xs text-secondary mt-1 uppercase tracking-widest">Conservation Platform</p>
+                    </li>
+                    <li>
+                        <a href="Myportfolio.html#projects" class="font-semibold hover:text-accent block">Student Registry System</a>
+                        <p class="text-xs text-secondary mt-1 uppercase tracking-widest">Python Management Tool</p>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section 3: External & Social -->
+            <section class="bg-secondary/50 p-6 rounded-2xl border border-custom">
+                <h2 class="text-xl font-bold mb-6 flex items-center gap-2 text-accent">
+                    Connect & Socials
+                </h2>
+                <ul class="space-y-4 font-medium">
+                    <li><a href="https://github.com/dulnindu123" target="_blank" class="hover:text-accent block">GitHub Profile</a></li>
+                    <li><a href="https://www.linkedin.com/in/wkdsar" target="_blank" class="hover:text-accent block">LinkedIn Network</a></li>
+                    <li><a href="https://web.facebook.com/dulnindu.saranga.7/" target="_blank" class="hover:text-accent block">Facebook Page</a></li>
+                    <li><a href="https://www.youtube.com/@Dulla-i7b" target="_blank" class="hover:text-accent block">YouTube Channel</a></li>
+                    <li><a href="mailto:dulla2850@gmail.com" class="hover:text-accent block">Email Support</a></li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="mt-24 pt-8 border-t border-custom text-secondary text-sm text-center">
+            <p>&copy; 2024 Dulnindu Saranga. All Rights Reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Sync theme with main portfolio
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</body>
+</html>
