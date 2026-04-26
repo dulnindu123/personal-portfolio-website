@@ -1,25 +1,34 @@
-# Personal Web Portfolio 💻
+# AI-Integrated Personal Portfolio 💻
 
-A highly modern, responsive personal portfolio website designed to showcase my skills, academic background, and development projects. Built using HTML5 and the Tailwind CSS framework, it serves as an interactive digital resume.
+A high-end, responsive personal portfolio website designed to showcase my engineering expertise, academic journey, and full-stack development projects. This portfolio features a live AI assistant and a standalone architectural sitemap.
 
 ## 🌟 Key Features
-* **Modern UI/UX:** Styled using Tailwind CSS for a sleek, utility-first design with smooth hover animations and gradient backgrounds.
-* **Interactive Navigation:** Features a sticky top navigation bar with smooth scrolling and a fully responsive mobile hamburger menu.
-* **Dynamic Modals:** Project categories (Python, Web Dev, Java, Blender) open in interactive JavaScript modals without leaving the page.
-* **Comprehensive Sections:** Includes sections for Hero introduction, About/Skills, Project Portfolio, Certifications (CEH, Security+), and Team philosophy.
+*   **🤖 AI Clone Assistant**: Integrated with **Google Gemini 1.5 Flash** for real-time inquiries about my skills and projects.
+*   **🗺️ Standalone Sitemap**: A professional directory page (`sitemap.html`) for structured navigation and SEO optimization.
+*   **⚡ Modern UI/UX**: Built with **Tailwind CSS**, featuring glassmorphism, smooth animations, and a responsive multi-theme design.
+*   **✍️ Dynamic Typewriter**: Uses **Typed.js** to highlight my core roles in Software Engineering and IoT.
+*   **📚 Educational Deep-Dive**: Detailed tracking of my journey from **Ananda College** to the **University of Westminster/IIT**.
 
 ## 🛠️ Tech Stack
-* **Frontend:** HTML5
-* **CSS Framework:** Tailwind CSS (via CDN)
-* **Interactivity:** Vanilla JavaScript (for modals and smooth scrolling)
-* **Typography & Icons:** Inter font family and embedded SVG icons.
+*   **Frontend**: HTML5, Vanilla JavaScript
+*   **CSS Framework**: Tailwind CSS (v3/v4 Hybrid logic)
+*   **AI Engine**: Google Gemini 1.5 Flash (via Generative AI SDK)
+*   **Interactivity**: Typed.js, ESM Modules
+*   **Version Control**: Git & GitHub
 
-## 🚀 Getting Started
+## 🚀 Featured Projects
+*   **BodySync AI**: Mobile health ecosystem built with React Native and AI analysis.
+*   **HelaDry IoT**: Solar-powered agricultural dehydration system with live telemetry.
+*   **Smart Campus API**: Enterprise-level Java backend for academic management.
+*   **Life on Land (SDG 15)**: Conservation platform focusing on biodiversity data.
+
+## 📂 Getting Started
 1. Clone the repository:
    ```bash
-   git clone https://github.com/dulnindu123/[YOUR-NEW-REPO-NAME].git
+   git clone https://github.com/dulnindu123/personal-portfolio-website.git
    ```
-2. Open `Myportfolio.html` in any modern web browser to explore the portfolio.
+2. Open `Myportfolio.html` in any modern web browser.
+3. To test the AI Assistant, ensure you have an active internet connection.
 
 ---
-*Developed by W.K. Dulnindu Saranga*
+*Designed & Engineered by [Dulnindu Saranga](https://github.com/dulnindu123)*
