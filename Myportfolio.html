@@ -560,35 +560,50 @@
         - Personal: Based in Sri Lanka.`;
 
         const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        const chat = model.startChat({
-            history: [{ role: "user", parts: [{ text: systemPrompt }] }, { role: "model", parts: [{ text: "Understood. I am now Dulnindu's assistant. How can I help you today?" }] }],
-        });
+        let chat;
+        
+        try {
+            chat = model.startChat({
+                history: [
+                    { 
+                        role: "user", 
+                        parts: [{ text: systemPrompt + "\n\nPlease acknowledge your instructions." }] 
+                    }, 
+                    { 
+                        role: "model", 
+                        parts: [{ text: "Understood. I am your professional AI assistant. How can I help you explore Dulnindu's portfolio today?" }] 
+                    }
+                ],
+            });
+        } catch (e) {
+            console.error("Chat Init Error:", e);
+        }
 
         chatForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             const message = chatInput.value.trim();
-            if (!message) return;
+            if (!message || !chat) return;
 
             addMessage(message, true);
             chatInput.value = '';
 
-            // Add typing indicator
             const loadingId = 'loading-' + Date.now();
             const loadingDiv = document.createElement('div');
             loadingDiv.id = loadingId;
             loadingDiv.className = 'flex justify-start';
-            loadingDiv.innerHTML = `<div class="bg-card border border-custom text-muted p-3 rounded-2xl rounded-tl-none text-xs italic">AI is thinking...</div>`;
+            loadingDiv.innerHTML = `<div class="bg-card border border-custom text-muted p-3 rounded-2xl rounded-tl-none text-xs italic animate-pulse">AI is thinking...</div>`;
             chatMessages.appendChild(loadingDiv);
 
             try {
                 const result = await chat.sendMessage(message);
                 const response = await result.response;
+                const text = response.text();
                 document.getElementById(loadingId).remove();
-                addMessage(response.text());
+                addMessage(text);
             } catch (error) {
-                console.error(error);
+                console.error("Gemini Error:", error);
                 document.getElementById(loadingId).remove();
-                addMessage("Sorry, I'm having trouble connecting right now. Please try again later.");
+                addMessage(`❌ Error: ${error.message || "Connection failed"}. Please check your API key or internet.`);
             }
         });
     </script>
