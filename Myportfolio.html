@@ -452,10 +452,146 @@
         </div>
     </section>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-accent text-white p-3 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-300 hover:bg-accent-hover hover:-translate-y-1 z-50 focus:outline-none" aria-label="Back to top">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-    </button>
+    <!-- AI Chatbot Widget -->
+    <div id="ai-chat-widget" class="fixed bottom-8 left-8 z-[60]">
+        <!-- Chat Bubble Trigger -->
+        <button id="chat-trigger" class="w-14 h-14 bg-accent text-white rounded-full shadow-2xl flex items-center justify-center hover:scale-110 transition-all duration-300 group relative">
+            <svg class="w-7 h-7 group-hover:rotate-12 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+            <span class="absolute -top-2 -right-2 flex h-3 w-3">
+                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-3 w-3 bg-accent"></span>
+            </span>
+        </button>
+
+        <!-- Chat Window -->
+        <div id="chat-window" class="absolute bottom-20 left-0 w-[350px] md:w-[400px] h-[500px] bg-card border border-custom rounded-3xl shadow-2xl flex flex-col overflow-hidden hidden transform origin-bottom-left transition-all duration-300 scale-95 opacity-0">
+            <!-- Header -->
+            <div class="bg-accent p-4 text-white flex justify-between items-center">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center font-bold">DS</div>
+                    <div>
+                        <h4 class="font-bold text-sm">Dulnindu's AI Assistant</h4>
+                        <p class="text-[10px] opacity-80">Powered by Gemini 1.5 Flash</p>
+                    </div>
+                </div>
+                <button id="close-chat" class="hover:bg-white/10 p-1 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="chat-messages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-secondary/30">
+                <div class="flex justify-start">
+                    <div class="bg-card border border-custom p-3 rounded-2xl rounded-tl-none max-w-[80%] text-sm text-primary shadow-sm">
+                        Hello! 👋 I'm Dulnindu's AI assistant. Ask me anything about his projects, skills, or education!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="p-4 bg-card border-t border-custom">
+                <form id="chat-form" class="flex gap-2">
+                    <input type="text" id="chat-input" placeholder="Type a message..." class="flex-1 bg-secondary border border-custom rounded-xl px-4 py-2 text-sm text-primary focus:outline-none focus:border-accent transition-colors">
+                    <button type="submit" class="bg-accent text-white p-2 rounded-xl hover:bg-accent-hover transition-colors">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Logic Script -->
+    <script type="module">
+        import { GoogleGenerativeAI } from "https://esm.run/@google/generative-ai";
+
+        const API_KEY = "AIzaSyA0nxezrgmofQlNYprM0SAWlpWRLaZu5Gc";
+        const genAI = new GoogleGenerativeAI(API_KEY);
+
+        const chatTrigger = document.getElementById('chat-trigger');
+        const chatWindow = document.getElementById('chat-window');
+        const closeChat = document.getElementById('close-chat');
+        const chatForm = document.getElementById('chat-form');
+        const chatInput = document.getElementById('chat-input');
+        const chatMessages = document.getElementById('chat-messages');
+
+        // Toggle Chat
+        function toggleChat() {
+            if (chatWindow.classList.contains('hidden')) {
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                chatWindow.classList.remove('scale-100', 'opacity-100');
+                chatWindow.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => chatWindow.classList.add('hidden'), 300);
+            }
+        }
+
+        chatTrigger.addEventListener('click', toggleChat);
+        closeChat.addEventListener('click', toggleChat);
+
+        // Add Message to UI
+        function addMessage(text, isUser = false) {
+            const div = document.createElement('div');
+            div.className = `flex ${isUser ? 'justify-end' : 'justify-start'}`;
+            div.innerHTML = `
+                <div class="${isUser ? 'bg-accent text-white' : 'bg-card border border-custom text-primary'} p-3 rounded-2xl ${isUser ? 'rounded-tr-none' : 'rounded-tl-none'} max-w-[80%] text-sm shadow-sm">
+                    ${text}
+                </div>
+            `;
+            chatMessages.appendChild(div);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        // Chat with Gemini
+        const systemPrompt = `You are the AI assistant for Dulnindu Saranga, a Software Engineering Undergraduate at the University of Westminster/IIT Sri Lanka. 
+        Your goal is to answer questions about his professional background and projects.
+        Key Details:
+        - Current Status: BSc (Hons) Computer Science student at IIT (University of Westminster).
+        - School: Ananda College, Colombo 10 (2010-2023).
+        - Major Projects: 
+            1. BodySync AI: A comprehensive fitness tracker using React Native and AI analysis.
+            2. Smart Campus API: A robust Java-based backend for university management.
+            3. HelaDry IoT: Solar-powered dehydrator for farmers using ESP32 and Firebase.
+        - Skills: Python, Java, C, C++, Next.js, React Native, SQL, System Design.
+        - Tone: Professional, helpful, and concise. Be confident about Dulnindu's skills.
+        - Personal: Based in Sri Lanka.`;
+
+        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const chat = model.startChat({
+            history: [{ role: "user", parts: [{ text: systemPrompt }] }, { role: "model", parts: [{ text: "Understood. I am now Dulnindu's assistant. How can I help you today?" }] }],
+        });
+
+        chatForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const message = chatInput.value.trim();
+            if (!message) return;
+
+            addMessage(message, true);
+            chatInput.value = '';
+
+            // Add typing indicator
+            const loadingId = 'loading-' + Date.now();
+            const loadingDiv = document.createElement('div');
+            loadingDiv.id = loadingId;
+            loadingDiv.className = 'flex justify-start';
+            loadingDiv.innerHTML = `<div class="bg-card border border-custom text-muted p-3 rounded-2xl rounded-tl-none text-xs italic">AI is thinking...</div>`;
+            chatMessages.appendChild(loadingDiv);
+
+            try {
+                const result = await chat.sendMessage(message);
+                const response = await result.response;
+                document.getElementById(loadingId).remove();
+                addMessage(response.text());
+            } catch (error) {
+                console.error(error);
+                document.getElementById(loadingId).remove();
+                addMessage("Sorry, I'm having trouble connecting right now. Please try again later.");
+            }
+        });
+    </script>
 
     <!-- Scripts -->
     <script>
