@@ -27,7 +27,7 @@ A high-end, responsive personal portfolio website designed to showcase my engine
    ```bash
    git clone https://github.com/dulnindu123/personal-portfolio-website.git
    ```
-2. Open `Myportfolio.html` in any modern web browser.
+2. Open `index.html` in any modern web browser.
 3. To test the AI Assistant, ensure you have an active internet connection.
 
 ---
